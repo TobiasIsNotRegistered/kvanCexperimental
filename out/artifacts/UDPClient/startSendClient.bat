@@ -1,0 +1,1 @@
+java -jar C:\Users\tobi6\OneDrive\AD_CopyLink_6tesSemester\kvanC\TobisChatSolution\out\artifacts\UDPClient\TobisChatSolution.jar 255.255.255.255 4444
