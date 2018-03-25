@@ -32,7 +32,7 @@ public class UDPServer {
             msg = new String(packet.getData()).trim();
 
             System.out.println(
-                    "Message from " + packet.getAddress().getHostAddress() + ": " + msg);
+                    ">> Message from " + packet.getAddress().getHostAddress() + ": " + msg);
 
             String[] data = msg.split("#");
             if(data[0].equalsIgnoreCase("TEP")){
@@ -40,6 +40,7 @@ public class UDPServer {
             }
 
             String pong = "#TAP#" + data[1] + "#" +  data[2] + "#connected#";
+            System.out.println(">> answering user with: " + pong);
             DatagramPacket p = new DatagramPacket(pong.getBytes(), pong.getBytes().length, packet.getAddress(), port);
             this.udpSocket.send(p);
         }
