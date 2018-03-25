@@ -62,15 +62,16 @@ public class UDPClient {
         System.out.println(">> Waiting for answer from server...");
 
         //wait for an answer
-        byte[] buf = new byte[256];
+        byte[] buf = new byte[1024];
         DatagramPacket packet = new DatagramPacket(buf, buf.length);
 
         // blocks until a packet is received
         udpSocket.receive(packet);
         pong = new String(packet.getData()).trim();
+        System.out.println(">> received answer from server: " + pong);
 
         String[] data = pong.split("#");
-        String status = data[3];
+        String status = data[4];
         System.out.println(">> received status from server: " + status);
     }
 }

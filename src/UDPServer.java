@@ -24,7 +24,7 @@ public class UDPServer {
 
         while (true) {
 
-            byte[] buf = new byte[256];
+            byte[] buf = new byte[1024];
             DatagramPacket packet = new DatagramPacket(buf, buf.length);
 
             // blocks until a packet is received
