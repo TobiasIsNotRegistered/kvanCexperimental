@@ -39,7 +39,8 @@ public class UDPServer {
                 users.add(new User(data[1], packet.getAddress(), Integer.valueOf(data[2]), "connected"));
             }
 
-            String pong = "#TAP#" + data[2] + "#" +  data[3] + "#connected#";
+            String pong = "#TAP#" + data[2] + "#" +  data[3] + "#connected@";
+            pong.trim();
             System.out.println(">> answering user with: " + pong);
             DatagramPacket p = new DatagramPacket(pong.getBytes(), pong.getBytes().length, packet.getAddress(), port);
             this.udpSocket.send(p);

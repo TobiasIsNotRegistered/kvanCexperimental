@@ -71,7 +71,7 @@ public class UDPClient {
         System.out.println(">> received answer from server: " + pong);
 
         String[] data = pong.split("#");
-        String status = data[4];
-        System.out.println(">> received status from server: " + status);
+        String status = data[3];
+
     }
 }
